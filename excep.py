@@ -4,7 +4,7 @@ import log
 
 def excep_check():
     try:
-        temp = input_n.x / input_n.y
+        input_n.x / input_n.y
         return True
     except ZeroDivisionError:
         return False

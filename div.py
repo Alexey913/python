@@ -1,10 +1,10 @@
 import input_n
 import log
 import excep
-import interface as i_f
 
 
 def float_div():
+    div_float = 0
     if excep.excep_check() is False:
         excep.if_zero()
     else:
