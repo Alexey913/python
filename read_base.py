@@ -1,5 +1,10 @@
+import csv
+ 
 def read_data():
-    with open('base.csv', 'r', encoding='utf-8') as file:
-        for line in file:
-            print(line)
+    with open('directory.csv', 'r', encoding="utf-8") as file:  
+        reader = csv.reader(file)
+        for row in reader:
+            print(', '.join(row))
         file.close()
+
+read_data()
