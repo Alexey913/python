@@ -79,10 +79,13 @@ def menu_4 ():
         log.universal_logger((input_n.x, input_n.y), data_description = "Продолжить вычисления")
         return menu_3 (type_menu_2)
     elif type_menu_4 == 2:
-        log.universal_logger('В главное меню', data_description = "Повторный ввод")
+        log.universal_logger('Меню ввода данных', data_description = "Повторный ввод")
         return (menu_3(menu_2()))
     elif type_menu_4 == 3:
+        log.universal_logger("Главное меню", data_description = "Возврат")
         return (menu_1())
+    elif type_menu_4 == 4:
+        return menu_3(menu_2())
     else:
         return end_prog()
     
@@ -100,9 +103,24 @@ def res_action (ent_menu):
         if type_menu_2 != 3:
             return div.floor_div()
         else:
+            log.universal_logger("Главное меню", data_description = "Возврат")
+            return (menu_1())
+    elif ent_menu == 6:
+        if type_menu_2 != 3:
+            return div.mod_div()
+        else:
+            log.universal_logger('Меню ввода данных', data_description = "Повторный ввод")
+            return (menu_3(menu_2()))   
+            
+    elif ent_menu == 7:      
+        if type_menu_2 != 3:
+            log.universal_logger("Главное меню", data_description = "Возврат")
+            return (menu_1())
+        else:
             return end_prog()
-    elif ent_menu == 6:      
-        return div.mod_div()
+    elif ent_menu == 8:      
+        log.universal_logger('Меню ввода данных', data_description = "Повторный ввод")
+        return (menu_3(menu_2())) 
     else:
         return end_prog()
 
