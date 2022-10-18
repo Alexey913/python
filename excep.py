@@ -27,7 +27,7 @@ def check_menu(quan):
 def if_zero():
     print ('Ошибка! Деление на ноль. Повторите ввод данных')
     log.universal_logger("Деление на 0", data_description = "Ошибка")
-    interface.menu_3(interface.menu_2())
+    interface.menu_4()
     
 
 def check_int():

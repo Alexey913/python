@@ -10,6 +10,7 @@ type_menu_1 = 0
 type_menu_2 = 0
 type_menu_3 = 0
 type_menu_4 = 0
+answer = 1
 
 def menu_1 ():
     print('\nВыберите пункт меню\n \
@@ -19,10 +20,17 @@ def menu_1 ():
     if type_menu_1 == 1:
         log.universal_logger("Калькулятор", data_description = "Запуск")
         menu_3(menu_2())
-
     elif type_menu_1 == 2:
         log.universal_logger("Вывод логов на экран", data_description = "Запуск")        
         log.print_log()
+        print('\nХотите выполнить новую операцию?\n\
+ 1 - Да\n\
+ 2 - Нет')
+        answer = excep.check_menu(3)
+        if answer == 1:
+            menu_1()
+        else:
+            end_prog()
     else:
         end_prog()
 
@@ -72,20 +80,18 @@ def menu_3 (type_menu_2):
 
 def menu_4 ():
     print(f'\nПродолжить вычисления с числами "{input_n.x}" и "{input_n.y}"?\n \
-1 - Продожить\n 2 - Новый ввод\n 3 - Главное меню\n 4 - Назад \n 5 - Выход')
+1 - Продожить\n 2 - Новый ввод\n 3 - Главное меню\n 4 - Выход')
     global type_menu_4
-    type_menu_4 = excep.check_menu(6)
+    type_menu_4 = excep.check_menu(5)
     if type_menu_4 == 1:
         log.universal_logger((input_n.x, input_n.y), data_description = "Продолжить вычисления")
         return menu_3 (type_menu_2)
     elif type_menu_4 == 2:
         log.universal_logger('Меню ввода данных', data_description = "Повторный ввод")
-        return (menu_3(menu_2()))
+        return menu_3(menu_2())
     elif type_menu_4 == 3:
         log.universal_logger("Главное меню", data_description = "Возврат")
         return (menu_1())
-    elif type_menu_4 == 4:
-        return menu_3(menu_2())
     else:
         return end_prog()
     
@@ -111,7 +117,6 @@ def res_action (ent_menu):
         else:
             log.universal_logger('Меню ввода данных', data_description = "Повторный ввод")
             return (menu_3(menu_2()))   
-            
     elif ent_menu == 7:      
         if type_menu_2 != 3:
             log.universal_logger("Главное меню", data_description = "Возврат")
@@ -143,12 +148,5 @@ def end_prog ():
 print("Приветствую Вас в программе-калькуляторе!")
 
 log.universal_logger("Вход в программу", data_description = "Запуск")
-answer = 1
-while answer == 1:
-    menu_1()
-    print('\nХотите выполнить новую операцию?\n\
- 1 - Да\n\
- 2 - Нет')
-    answer = excep.check_menu(3)
-else:
-    end_prog()
+
+menu_1()
