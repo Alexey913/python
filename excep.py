@@ -2,7 +2,7 @@ import input_n
 import interface
 import log
 
-def excep_check():
+def excep_check_zero():
     try:
         input_n.x / input_n.y
         return True
