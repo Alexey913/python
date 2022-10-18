@@ -6,11 +6,6 @@ import sub
 import mult
 import div
 
-type_menu_1 = 0
-type_menu_2 = 0
-type_menu_3 = 0
-
-
 def menu_1 ():
     print('\nВыберите пункт меню\n \
 1 - Калькулятор\n 2 - Вывод логов на экран\n 3 - Выход')
@@ -56,14 +51,12 @@ def menu_3 (type_menu_2):
         type_menu_3 = excep.check_menu(5)
     else:
         type_menu_3 = excep.check_menu(7)
-    print(f'\n{action(type_menu_3)} чисел {input_n.x} и {input_n.y} составляет {res_action(type_menu_3)}')
+    if type_menu_3 in range(1,4) or excep.excep_check_zero() is True:
+        print(f'\n{action(type_menu_3)} чисел {input_n.x} и {input_n.y} составляет {res_action(type_menu_3)}')
+    else:
+        return excep.if_zero()
+
     
-def end_prog ():
-    print('\nВыполнение программы завершено. Спасибо!')
-    log.universal_logger("по команде пользователя", data_description = "Выход") 
-    exit()
-
-
 def res_action (ent_menu):
     if ent_menu == 1:
         return summ.summ()
@@ -86,7 +79,12 @@ def action (ent_menu):
         action = {1: "Сумма", 2: "Разность", 3: "Произведение", 4: "Частное",
                   5: "Частное от целочисленного деления", 6: "Остаток от деления"}
     return action.get(ent_menu)
-
+    
+    
+def end_prog ():
+    print('\nВыполнение программы завершено. Спасибо!')
+    log.universal_logger("по команде пользователя", data_description = "Выход") 
+    exit()
 
 
 print("Приветствую Вас в программе-калькуляторе!")
