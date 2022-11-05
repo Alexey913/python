@@ -15,7 +15,7 @@ def form_list ():
     return new_list
 
 def checklist(enter_list):
-    if enter_list[0]!=0:
+    if enter_list[0]!=1:
         return 0
     for i in range (1, len(enter_list)):
         if(enter_list[i]-1)!=enter_list[i-1]:
