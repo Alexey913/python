@@ -1,4 +1,5 @@
 # Курс Python
+## [Курс погружение в Python](https://github.com/Alexey913/deep_python.git)
 
 ## [Семинар 1 - Знакомство с Python: часть 1](/Seminar1)
 ### [Задание 1](/Seminar1/Task1_1.py)
