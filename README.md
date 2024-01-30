@@ -1,4 +1,4 @@
-# Курс Python
+# Курс Знакомство с Python
 ## [Курс погружение в Python](https://github.com/Alexey913/deep_python.git)
 
 ## [Семинар 1 - Знакомство с Python: часть 1](/Seminar1)
